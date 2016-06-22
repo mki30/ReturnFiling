@@ -1,0 +1,84 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using ReturnFilingModel;
+
+public partial class Deductions_MoreDeductions : BasePage
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+<<<<<<< .mine
+        base.Page_Load(sender, e);
+=======
+        ShowData();
+>>>>>>> .r260
+    }
+    protected void btnSave_Click(object sender, EventArgs e)
+    {
+        GetAllTextBoxes(divMain);
+    }
+
+    public void GetAllTextBoxes(Control parent)
+    {
+        Global.CandidateID = 1;
+        foreach (Control ctl in parent.Controls)
+        {
+            if (ctl.GetType().ToString().Equals("System.Web.UI.WebControls.TextBox"))
+            {
+                TextBox txt = ((TextBox)ctl);
+                string Amount = txt.Text;
+                int IsSenior = -1;
+                string SectionName = txt.ID.Replace("txt_", "");
+
+                switch (txt.ID)
+                {
+                    case "txt_80D_1": IsSenior = dd_80D_1.SelectedIndex; break;
+                    case "txt_80D_2": IsSenior = dd_80D_2.SelectedIndex; break;
+                    case "txt_80DDB": IsSenior = Cmn.ToInt(dd_80DDB_1.SelectedValue); break;
+                    case "txt_80GG": IsSenior = Cmn.ToInt(dd_80GG.SelectedValue); break;
+                }
+
+                Deduction d = Deduction.GetUnique(Global.CandidateID, SectionName);
+                if (d == null)
+                {
+                    d = new Deduction();
+                    d.ID = 0;
+                }
+                d.CandidateID = Global.CandidateID;
+                d.SectionName = SectionName.ToUpper();
+                d.Amount = Cmn.ToDbl(Amount);
+                d.IsSenior = IsSenior;
+                d.Save();
+            }
+        }
+    }
+
+    public void ShowData()
+    {
+        Global.CandidateID = 1;
+        List<Deduction> DeductionList = Deduction.GetByCandidateID(Global.CandidateID);
+        foreach (Deduction ded in DeductionList)
+        {
+            string ID = "txt_" + ded.SectionName.Trim();
+            var ctl = divMain.FindControl(ID.Trim());
+            if (ctl != null)
+            {
+                TextBox txt = ((TextBox)ctl);
+                txt.Text = ded.Amount.ToString();
+                switch (ID)
+                {
+                    case "txt_80D_1": dd_80D_1.SelectedIndex = Cmn.ToInt(ded.IsSenior); break;
+                    case "txt_80D_2": dd_80D_2.SelectedIndex = Cmn.ToInt(ded.IsSenior); break;
+                    case "txt_80DDB": dd_80DDB_1.SelectedValue = ded.IsSenior.ToString(); break;
+                    case "txt_80GG": dd_80GG.SelectedValue = ded.IsSenior.ToString(); break;
+                }
+            }
+        }
+    }
+
+
+    
+}

@@ -1,0 +1,773 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ReturnFilingModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ReturnFilingModelStoreContainer">
+          <EntitySet Name="AdditionalInfo" EntityType="ReturnFilingModel.Store.AdditionalInfo" store:Type="Tables" />
+          <EntitySet Name="AdvanceTax" EntityType="ReturnFilingModel.Store.AdvanceTax" store:Type="Tables" />
+          <EntitySet Name="Asset" EntityType="ReturnFilingModel.Store.Asset" store:Type="Tables" />
+          <EntitySet Name="CapitalGain" EntityType="ReturnFilingModel.Store.CapitalGain" store:Type="Tables" />
+          <EntitySet Name="Deduction" EntityType="ReturnFilingModel.Store.Deduction" store:Type="Tables" />
+          <EntitySet Name="Donation" EntityType="ReturnFilingModel.Store.Donation" store:Type="Tables" />
+          <EntitySet Name="HouseProperty" EntityType="ReturnFilingModel.Store.HouseProperty" store:Type="Tables" />
+          <EntitySet Name="OtherIncome" EntityType="ReturnFilingModel.Store.OtherIncome" store:Type="Tables" />
+          <EntitySet Name="PersonalInfo" EntityType="ReturnFilingModel.Store.PersonalInfo" store:Type="Tables" />
+          <EntitySet Name="Refund" EntityType="ReturnFilingModel.Store.Refund" store:Type="Tables" />
+          <EntitySet Name="Salary" EntityType="ReturnFilingModel.Store.Salary" store:Type="Tables" />
+          <EntitySet Name="TDSEntry" EntityType="ReturnFilingModel.Store.TDSEntry" store:Type="Tables" />
+          <EntitySet Name="UserManagement" EntityType="ReturnFilingModel.Store.UserManagement" store:Type="Tables" />
+        </EntityContainer>
+        <EntityType Name="AdditionalInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CandidateID" Type="int" />
+          <Property Name="IncomeTaxWard" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="30" />
+          <Property Name="SecondayEmailID" Type="nvarchar" MaxLength="30" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="10" />
+          <Property Name="SecondaryMobile" Type="nvarchar" MaxLength="10" />
+          <Property Name="STDCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="10" />
+          <Property Name="BankAccountNumber" Type="nvarchar" MaxLength="20" />
+          <Property Name="BankIFSC" Type="nvarchar" MaxLength="10" />
+          <Property Name="AccountType" Type="nvarchar" MaxLength="20" />
+          <Property Name="ReliefUnder89" Type="float" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AdvanceTax">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CandidateID" Type="int" />
+          <Property Name="SequenceNumber" Type="int" />
+          <Property Name="AmountDeposited" Type="float" />
+          <Property Name="DateOfDeposit" Type="datetime" />
+          <Property Name="BSRCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="ChallanNo" Type="nvarchar" MaxLength="20" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Asset">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CandidateID" Type="int" />
+          <Property Name="SequenceNumber" Type="int" />
+          <Property Name="Particular" Type="nvarchar" MaxLength="30" />
+          <Property Name="Cost" Type="float" />
+          <Property Name="Liability" Type="float" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CapitalGain">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CandidateID" Type="int" />
+          <Property Name="SequenceNumber" Type="int" />
+          <Property Name="AssetSold" Type="nvarchar" MaxLength="200" />
+          <Property Name="SalePrice" Type="float" />
+          <Property Name="ValueOfProperty" Type="float" />
+          <Property Name="TransferExpenses" Type="float" />
+          <Property Name="PurchasePrice" Type="float" />
+          <Property Name="DateOfSale" Type="datetime" />
+          <Property Name="DateOfPurchase" Type="datetime" />
+          <Property Name="STTPaid" Type="int" />
+          <Property Name="TypeOfShare" Type="nvarchar" MaxLength="20" />
+          <Property Name="InvestmentUnder54" Type="float" />
+          <Property Name="InvestmentUnder54EC" Type="float" />
+          <Property Name="InvestmentUnder54F" Type="float" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type" Type="int" />
+        </EntityType>
+        <EntityType Name="Deduction">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CandidateID" Type="int" />
+          <Property Name="SequenceNumber" Type="int" />
+          <Property Name="SectionName" Type="nvarchar" MaxLength="20" />
+          <Property Name="Data1" Type="nvarchar" MaxLength="20" />
+          <Property Name="Data2" Type="nvarchar" MaxLength="20" />
+          <Property Name="Data3" Type="nvarchar" MaxLength="20" />
+          <Property Name="Amount" Type="float" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Donation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CandidateID" Type="int" />
+          <Property Name="SequenceNumber" Type="int" />
+          <Property Name="Amount" Type="float" />
+          <Property Name="NameOfDonee" Type="nvarchar" MaxLength="30" />
+          <Property Name="PANOfDonee" Type="nvarchar" MaxLength="10" />
+          <Property Name="LimitOfDeduction" Type="nvarchar" MaxLength="20" />
+          <Property Name="QualifyingPercentage" Type="nvarchar" MaxLength="5" />
+          <Property Name="AddressOfDonee" Type="nvarchar" MaxLength="50" />
+          <Property Name="CityOfDonee" Type="nvarchar" MaxLength="20" />
+          <Property Name="StateOfDonee" Type="nvarchar" MaxLength="30" />
+          <Property Name="PinCodeOfDonee" Type="nvarchar" MaxLength="6" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="HouseProperty">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CandidateID" Type="int" />
+          <Property Name="InterestOnSelfOccupiedProperty" Type="float" />
+          <Property Name="PreConsFinancialYear" Type="int" />
+          <Property Name="PreConsTotalInterest" Type="float" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="30" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="30" />
+          <Property Name="Area" Type="nvarchar" MaxLength="30" />
+          <Property Name="City" Type="nvarchar" MaxLength="30" />
+          <Property Name="State" Type="nvarchar" MaxLength="30" />
+          <Property Name="PinCode" Type="nvarchar" MaxLength="6" />
+          <Property Name="OwnershipShare" Type="float" />
+          <Property Name="CoOwnerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CoOwnerPAN" Type="nvarchar" MaxLength="20" />
+          <Property Name="CoOwnerShare" Type="nvarchar" MaxLength="20" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OtherIncome">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CandidateID" Type="int" />
+          <Property Name="IncomeFromSavingBankAndPostOffice" Type="float" />
+          <Property Name="IncomeFromFixedDeposits" Type="float" />
+          <Property Name="AnyOtherIncome" Type="float" />
+          <Property Name="DividendEarned" Type="float" />
+          <Property Name="ExemptInterestIncome" Type="float" />
+          <Property Name="MiscExemptIncome" Type="float" />
+          <Property Name="AgricultureIncome" Type="float" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PersonalInfo">
+          <Key>
+            <PropertyRef Name="AssessmentYear" />
+          </Key>
+          <Property Name="AssessmentYear" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="ID" Type="int" />
+          <Property Name="PANNumber" Type="nvarchar" MaxLength="15" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="30" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="30" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="30" />
+          <Property Name="Gender" Type="int" />
+          <Property Name="DOB" Type="datetime" />
+          <Property Name="FatherName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Area" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="PinCode" Type="nvarchar" MaxLength="6" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="60" />
+          <Property Name="AssociateID" Type="int" />
+          <Property Name="Status" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Refund">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="FinancialYear" Type="int" />
+          <Property Name="AssessmentYear" Type="int" />
+          <Property Name="EmployerName" Type="nvarchar" MaxLength="100" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="100" />
+          <Property Name="DeductorPan" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeePan" Type="nvarchar" MaxLength="50" />
+          <Property Name="CITTDS" Type="nvarchar" MaxLength="50" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Salary">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CandidateID" Type="int" />
+          <Property Name="SequenceNumber" Type="int" />
+          <Property Name="ChargeableIncome" Type="float" />
+          <Property Name="NameOfEmployer" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployerType" Type="nvarchar" MaxLength="20" />
+          <Property Name="EmployerTAN" Type="nvarchar" MaxLength="20" />
+          <Property Name="TaxDeducted" Type="float" />
+          <Property Name="EmployerAddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="EmployerCity" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployerState" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployerPinCode" Type="nvarchar" MaxLength="6" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TDSEntry">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CandidateID" Type="int" />
+          <Property Name="SequenceNumber" Type="int" />
+          <Property Name="DeductorTAN" Type="nvarchar" MaxLength="20" />
+          <Property Name="DeductorName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ToatalTaxDeducted" Type="float" />
+          <Property Name="ToatalDeductedClaimed" Type="float" />
+          <Property Name="FinancialYear" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UserManagement">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" />
+          <Property Name="Username" Type="nvarchar" MaxLength="20" />
+          <Property Name="Password" Type="nvarchar" MaxLength="10" />
+          <Property Name="Role" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ReturnFilingModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ReturnFilingEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="AdvanceTaxes" EntityType="ReturnFilingModel.AdvanceTax" />
+          <EntitySet Name="Assets" EntityType="ReturnFilingModel.Asset" />
+          <EntitySet Name="CapitalGains" EntityType="ReturnFilingModel.CapitalGain" />
+          <EntitySet Name="Deductions" EntityType="ReturnFilingModel.Deduction" />
+          <EntitySet Name="Donations" EntityType="ReturnFilingModel.Donation" />
+          <EntitySet Name="HouseProperties" EntityType="ReturnFilingModel.HouseProperty" />
+          <EntitySet Name="OtherIncomes" EntityType="ReturnFilingModel.OtherIncome" />
+          <EntitySet Name="Refunds" EntityType="ReturnFilingModel.Refund" />
+          <EntitySet Name="Salaries" EntityType="ReturnFilingModel.Salary" />
+          <EntitySet Name="TDSEntries" EntityType="ReturnFilingModel.TDSEntry" />
+          <EntitySet Name="UserManagements" EntityType="ReturnFilingModel.UserManagement" />
+          <EntitySet Name="AdditionalInfoes" EntityType="ReturnFilingModel.AdditionalInfo" />
+          <EntitySet Name="PersonalInfoes" EntityType="ReturnFilingModel.PersonalInfo" />
+        </EntityContainer>
+        <EntityType Name="AdvanceTax">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="CandidateID" />
+          <Property Type="Int32" Name="SequenceNumber" />
+          <Property Type="Double" Name="AmountDeposited" />
+          <Property Type="DateTime" Name="DateOfDeposit" Precision="3" />
+          <Property Type="String" Name="BSRCode" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ChallanNo" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Asset">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="CandidateID" />
+          <Property Type="Int32" Name="SequenceNumber" />
+          <Property Type="String" Name="Particular" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Cost" />
+          <Property Type="Double" Name="Liability" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CapitalGain">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="CandidateID" />
+          <Property Type="Int32" Name="SequenceNumber" />
+          <Property Type="String" Name="AssetSold" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="SalePrice" />
+          <Property Type="Double" Name="ValueOfProperty" />
+          <Property Type="Double" Name="TransferExpenses" />
+          <Property Type="Double" Name="PurchasePrice" />
+          <Property Type="DateTime" Name="DateOfSale" Precision="3" />
+          <Property Type="DateTime" Name="DateOfPurchase" Precision="3" />
+          <Property Type="Int32" Name="STTPaid" />
+          <Property Type="String" Name="TypeOfShare" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="InvestmentUnder54" />
+          <Property Type="Double" Name="InvestmentUnder54EC" />
+          <Property Type="Double" Name="InvestmentUnder54F" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Type" />
+        </EntityType>
+        <EntityType Name="Deduction">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="CandidateID" />
+          <Property Type="Int32" Name="SequenceNumber" />
+          <Property Type="String" Name="SectionName" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Data1" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Data2" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Data3" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Amount" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Donation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="CandidateID" />
+          <Property Type="Int32" Name="SequenceNumber" />
+          <Property Type="Double" Name="Amount" />
+          <Property Type="String" Name="NameOfDonee" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PANOfDonee" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LimitOfDeduction" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="QualifyingPercentage" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AddressOfDonee" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CityOfDonee" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StateOfDonee" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PinCodeOfDonee" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="HouseProperty">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="CandidateID" />
+          <Property Type="Double" Name="InterestOnSelfOccupiedProperty" />
+          <Property Type="Int32" Name="PreConsFinancialYear" />
+          <Property Type="Double" Name="PreConsTotalInterest" />
+          <Property Type="String" Name="Address1" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address2" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Area" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="State" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PinCode" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="OwnershipShare" />
+          <Property Type="String" Name="CoOwnerName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CoOwnerPAN" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CoOwnerShare" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OtherIncome">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="CandidateID" />
+          <Property Type="Double" Name="IncomeFromSavingBankAndPostOffice" />
+          <Property Type="Double" Name="IncomeFromFixedDeposits" />
+          <Property Type="Double" Name="AnyOtherIncome" />
+          <Property Type="Double" Name="DividendEarned" />
+          <Property Type="Double" Name="ExemptInterestIncome" />
+          <Property Type="Double" Name="MiscExemptIncome" />
+          <Property Type="Double" Name="AgricultureIncome" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Refund">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="FinancialYear" />
+          <Property Type="Int32" Name="AssessmentYear" />
+          <Property Type="String" Name="EmployerName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmployeeName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeductorPan" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmployeePan" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CITTDS" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Salary">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="CandidateID" />
+          <Property Type="Int32" Name="SequenceNumber" />
+          <Property Type="Double" Name="ChargeableIncome" />
+          <Property Type="String" Name="NameOfEmployer" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmployerType" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmployerTAN" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="TaxDeducted" />
+          <Property Type="String" Name="EmployerAddress" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmployerCity" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmployerState" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmployerPinCode" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TDSEntry">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="CandidateID" />
+          <Property Type="Int32" Name="SequenceNumber" />
+          <Property Type="String" Name="DeductorTAN" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeductorName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="ToatalTaxDeducted" />
+          <Property Type="Double" Name="ToatalDeductedClaimed" />
+          <Property Type="Int32" Name="FinancialYear" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserManagement">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Name" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Username" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Role" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AdditionalInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="CandidateID" />
+          <Property Type="String" Name="IncomeTaxWard" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailID" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SecondayEmailID" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mobile" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SecondaryMobile" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="STDCode" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BankAccountNumber" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BankIFSC" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AccountType" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="ReliefUnder89" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PersonalInfo">
+          <Key>
+            <PropertyRef Name="AssessmentYear" />
+          </Key>
+          <Property Type="String" Name="AssessmentYear" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ID" />
+          <Property Type="String" Name="PANNumber" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FirstName" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MiddleName" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Gender" />
+          <Property Type="DateTime" Name="DOB" Precision="3" />
+          <Property Type="String" Name="FatherName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address1" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Area" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="State" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Country" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PinCode" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailID" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="AssociateID" />
+          <Property Type="Int32" Name="Status" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mobile" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ReturnFilingModelStoreContainer" CdmEntityContainer="ReturnFilingEntities">
+          <EntitySetMapping Name="AdvanceTaxes">
+            <EntityTypeMapping TypeName="ReturnFilingModel.AdvanceTax">
+              <MappingFragment StoreEntitySet="AdvanceTax">
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="ChallanNo" ColumnName="ChallanNo" />
+                <ScalarProperty Name="BSRCode" ColumnName="BSRCode" />
+                <ScalarProperty Name="DateOfDeposit" ColumnName="DateOfDeposit" />
+                <ScalarProperty Name="AmountDeposited" ColumnName="AmountDeposited" />
+                <ScalarProperty Name="SequenceNumber" ColumnName="SequenceNumber" />
+                <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Assets">
+            <EntityTypeMapping TypeName="ReturnFilingModel.Asset">
+              <MappingFragment StoreEntitySet="Asset">
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="Liability" ColumnName="Liability" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Particular" ColumnName="Particular" />
+                <ScalarProperty Name="SequenceNumber" ColumnName="SequenceNumber" />
+                <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CapitalGains">
+            <EntityTypeMapping TypeName="ReturnFilingModel.CapitalGain">
+              <MappingFragment StoreEntitySet="CapitalGain">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="InvestmentUnder54F" ColumnName="InvestmentUnder54F" />
+                <ScalarProperty Name="InvestmentUnder54EC" ColumnName="InvestmentUnder54EC" />
+                <ScalarProperty Name="InvestmentUnder54" ColumnName="InvestmentUnder54" />
+                <ScalarProperty Name="TypeOfShare" ColumnName="TypeOfShare" />
+                <ScalarProperty Name="STTPaid" ColumnName="STTPaid" />
+                <ScalarProperty Name="DateOfPurchase" ColumnName="DateOfPurchase" />
+                <ScalarProperty Name="DateOfSale" ColumnName="DateOfSale" />
+                <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+                <ScalarProperty Name="TransferExpenses" ColumnName="TransferExpenses" />
+                <ScalarProperty Name="ValueOfProperty" ColumnName="ValueOfProperty" />
+                <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+                <ScalarProperty Name="AssetSold" ColumnName="AssetSold" />
+                <ScalarProperty Name="SequenceNumber" ColumnName="SequenceNumber" />
+                <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Deductions">
+            <EntityTypeMapping TypeName="ReturnFilingModel.Deduction">
+              <MappingFragment StoreEntitySet="Deduction">
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Data3" ColumnName="Data3" />
+                <ScalarProperty Name="Data2" ColumnName="Data2" />
+                <ScalarProperty Name="Data1" ColumnName="Data1" />
+                <ScalarProperty Name="SectionName" ColumnName="SectionName" />
+                <ScalarProperty Name="SequenceNumber" ColumnName="SequenceNumber" />
+                <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Donations">
+            <EntityTypeMapping TypeName="ReturnFilingModel.Donation">
+              <MappingFragment StoreEntitySet="Donation">
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="PinCodeOfDonee" ColumnName="PinCodeOfDonee" />
+                <ScalarProperty Name="StateOfDonee" ColumnName="StateOfDonee" />
+                <ScalarProperty Name="CityOfDonee" ColumnName="CityOfDonee" />
+                <ScalarProperty Name="AddressOfDonee" ColumnName="AddressOfDonee" />
+                <ScalarProperty Name="QualifyingPercentage" ColumnName="QualifyingPercentage" />
+                <ScalarProperty Name="LimitOfDeduction" ColumnName="LimitOfDeduction" />
+                <ScalarProperty Name="PANOfDonee" ColumnName="PANOfDonee" />
+                <ScalarProperty Name="NameOfDonee" ColumnName="NameOfDonee" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="SequenceNumber" ColumnName="SequenceNumber" />
+                <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HouseProperties">
+            <EntityTypeMapping TypeName="ReturnFilingModel.HouseProperty">
+              <MappingFragment StoreEntitySet="HouseProperty">
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="CoOwnerShare" ColumnName="CoOwnerShare" />
+                <ScalarProperty Name="CoOwnerPAN" ColumnName="CoOwnerPAN" />
+                <ScalarProperty Name="CoOwnerName" ColumnName="CoOwnerName" />
+                <ScalarProperty Name="OwnershipShare" ColumnName="OwnershipShare" />
+                <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="PreConsTotalInterest" ColumnName="PreConsTotalInterest" />
+                <ScalarProperty Name="PreConsFinancialYear" ColumnName="PreConsFinancialYear" />
+                <ScalarProperty Name="InterestOnSelfOccupiedProperty" ColumnName="InterestOnSelfOccupiedProperty" />
+                <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OtherIncomes">
+            <EntityTypeMapping TypeName="ReturnFilingModel.OtherIncome">
+              <MappingFragment StoreEntitySet="OtherIncome">
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="AgricultureIncome" ColumnName="AgricultureIncome" />
+                <ScalarProperty Name="MiscExemptIncome" ColumnName="MiscExemptIncome" />
+                <ScalarProperty Name="ExemptInterestIncome" ColumnName="ExemptInterestIncome" />
+                <ScalarProperty Name="DividendEarned" ColumnName="DividendEarned" />
+                <ScalarProperty Name="AnyOtherIncome" ColumnName="AnyOtherIncome" />
+                <ScalarProperty Name="IncomeFromFixedDeposits" ColumnName="IncomeFromFixedDeposits" />
+                <ScalarProperty Name="IncomeFromSavingBankAndPostOffice" ColumnName="IncomeFromSavingBankAndPostOffice" />
+                <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Refunds">
+            <EntityTypeMapping TypeName="ReturnFilingModel.Refund">
+              <MappingFragment StoreEntitySet="Refund">
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="CITTDS" ColumnName="CITTDS" />
+                <ScalarProperty Name="EmployeePan" ColumnName="EmployeePan" />
+                <ScalarProperty Name="DeductorPan" ColumnName="DeductorPan" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="EmployerName" ColumnName="EmployerName" />
+                <ScalarProperty Name="AssessmentYear" ColumnName="AssessmentYear" />
+                <ScalarProperty Name="FinancialYear" ColumnName="FinancialYear" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Salaries">
+            <EntityTypeMapping TypeName="ReturnFilingModel.Salary">
+              <MappingFragment StoreEntitySet="Salary">
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="EmployerPinCode" ColumnName="EmployerPinCode" />
+                <ScalarProperty Name="EmployerState" ColumnName="EmployerState" />
+                <ScalarProperty Name="EmployerCity" ColumnName="EmployerCity" />
+                <ScalarProperty Name="EmployerAddress" ColumnName="EmployerAddress" />
+                <ScalarProperty Name="TaxDeducted" ColumnName="TaxDeducted" />
+                <ScalarProperty Name="EmployerTAN" ColumnName="EmployerTAN" />
+                <ScalarProperty Name="EmployerType" ColumnName="EmployerType" />
+                <ScalarProperty Name="NameOfEmployer" ColumnName="NameOfEmployer" />
+                <ScalarProperty Name="ChargeableIncome" ColumnName="ChargeableIncome" />
+                <ScalarProperty Name="SequenceNumber" ColumnName="SequenceNumber" />
+                <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TDSEntries">
+            <EntityTypeMapping TypeName="ReturnFilingModel.TDSEntry">
+              <MappingFragment StoreEntitySet="TDSEntry">
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="FinancialYear" ColumnName="FinancialYear" />
+                <ScalarProperty Name="ToatalDeductedClaimed" ColumnName="ToatalDeductedClaimed" />
+                <ScalarProperty Name="ToatalTaxDeducted" ColumnName="ToatalTaxDeducted" />
+                <ScalarProperty Name="DeductorName" ColumnName="DeductorName" />
+                <ScalarProperty Name="DeductorTAN" ColumnName="DeductorTAN" />
+                <ScalarProperty Name="SequenceNumber" ColumnName="SequenceNumber" />
+                <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserManagements">
+            <EntityTypeMapping TypeName="ReturnFilingModel.UserManagement">
+              <MappingFragment StoreEntitySet="UserManagement">
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdditionalInfoes">
+            <EntityTypeMapping TypeName="ReturnFilingModel.AdditionalInfo">
+              <MappingFragment StoreEntitySet="AdditionalInfo">
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="ReliefUnder89" ColumnName="ReliefUnder89" />
+                <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+                <ScalarProperty Name="BankIFSC" ColumnName="BankIFSC" />
+                <ScalarProperty Name="BankAccountNumber" ColumnName="BankAccountNumber" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="STDCode" ColumnName="STDCode" />
+                <ScalarProperty Name="SecondaryMobile" ColumnName="SecondaryMobile" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="SecondayEmailID" ColumnName="SecondayEmailID" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="IncomeTaxWard" ColumnName="IncomeTaxWard" />
+                <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonalInfoes">
+            <EntityTypeMapping TypeName="ReturnFilingModel.PersonalInfo">
+              <MappingFragment StoreEntitySet="PersonalInfo">
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AssociateID" ColumnName="AssociateID" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="PANNumber" ColumnName="PANNumber" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AssessmentYear" ColumnName="AssessmentYear" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="True" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <edmx:DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams />
+  </edmx:Designer>
+</edmx:Edmx>

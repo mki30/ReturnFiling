@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/propertymap_propertymap/!svn/ver/320/ReturnFiling/Account
+END
+Web.config
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/propertymap_propertymap/!svn/ver/274/ReturnFiling/Account/Web.config
+END
+Login.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/propertymap_propertymap/!svn/ver/309/ReturnFiling/Account/Login.aspx
+END
+Manage.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/propertymap_propertymap/!svn/ver/307/ReturnFiling/Account/Manage.aspx
+END
+OpenAuthProviders.ascx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/propertymap_propertymap/!svn/ver/274/ReturnFiling/Account/OpenAuthProviders.ascx.cs
+END
+Register.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/propertymap_propertymap/!svn/ver/306/ReturnFiling/Account/Register.aspx.cs
+END
+PasswordRecover.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/propertymap_propertymap/!svn/ver/309/ReturnFiling/Account/PasswordRecover.aspx
+END
+Login.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/propertymap_propertymap/!svn/ver/311/ReturnFiling/Account/Login.aspx.cs
+END
+Manage.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/propertymap_propertymap/!svn/ver/299/ReturnFiling/Account/Manage.aspx.cs
+END
+PasswordRecover.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/propertymap_propertymap/!svn/ver/309/ReturnFiling/Account/PasswordRecover.aspx.cs
+END
+RegisterExternalLogin.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/propertymap_propertymap/!svn/ver/320/ReturnFiling/Account/RegisterExternalLogin.aspx
+END
+OpenAuthProviders.ascx
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/propertymap_propertymap/!svn/ver/306/ReturnFiling/Account/OpenAuthProviders.ascx
+END
+Register.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/propertymap_propertymap/!svn/ver/306/ReturnFiling/Account/Register.aspx
+END
+RegisterExternalLogin.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/propertymap_propertymap/!svn/ver/320/ReturnFiling/Account/RegisterExternalLogin.aspx.cs
+END

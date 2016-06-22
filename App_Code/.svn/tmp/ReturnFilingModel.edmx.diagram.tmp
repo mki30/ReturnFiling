@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cedab441c240460892ccb721560cb854" Name="Diagram1" ZoomLevel="97">
+        <EntityTypeShape EntityType="ReturnFilingModel.Asset" Width="1.5" PointX="0.52380086505962575" PointY="4.9045435213039363" />
+        <EntityTypeShape EntityType="ReturnFilingModel.Deduction" Width="1.5" PointX="10.375" PointY="5.625" />
+        <EntityTypeShape EntityType="ReturnFilingModel.HouseProperty" Width="1.5" PointX="7.5624604763288339" PointY="16.564228348696712" />
+        <EntityTypeShape EntityType="ReturnFilingModel.OtherIncome" Width="1.5" PointX="10.942300848170323" PointY="16.742180608558552" />
+        <EntityTypeShape EntityType="ReturnFilingModel.PersonalInfo" Width="1.5" PointX="9.60433974378013" PointY="23.078881527799592" />
+        <EntityTypeShape EntityType="ReturnFilingModel.Refund" Width="1.5" PointX="6.5455332317135921" PointY="29.871500759325688" />
+        <EntityTypeShape EntityType="ReturnFilingModel.Salary" Width="1.5" PointX="8.875" PointY="1" />
+        <EntityTypeShape EntityType="ReturnFilingModel.Donation" Width="1.5" PointX="3.6234611531828813" PointY="8.014639679349326" />
+        <EntityTypeShape EntityType="ReturnFilingModel.AdvanceTax" Width="1.5" PointX="3.4496847816974316" PointY="1.3849020606767861" />
+        <EntityTypeShape EntityType="ReturnFilingModel.TDSEntry" Width="1.5" PointX="0.875" PointY="1" />
+        <EntityTypeShape EntityType="ReturnFilingModel.C__MigrationHistory" Width="1.5" PointX="12" PointY="12.75" />
+        <EntityTypeShape EntityType="ReturnFilingModel.AspNetRole" Width="1.5" PointX="15" PointY="14.25" />
+        <EntityTypeShape EntityType="ReturnFilingModel.AspNetUserClaim" Width="1.5" PointX="18" PointY="15.75" />
+        <EntityTypeShape EntityType="ReturnFilingModel.AspNetUserLogin" Width="1.5" PointX="0.5" PointY="17.25" />
+        <EntityTypeShape EntityType="ReturnFilingModel.AspNetUser" Width="1.5" PointX="3" PointY="18.75" />
+        <EntityTypeShape EntityType="ReturnFilingModel.CapitalGain" Width="1.5" PointX="6" PointY="20.25" />
+        <AssociationConnector Association="ReturnFilingModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" />
+        <AssociationConnector Association="ReturnFilingModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="ReturnFilingModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="ReturnFilingModel.UserManagement" Width="1.5" PointX="2.9145645307910466" PointY="8.6793516765718124" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

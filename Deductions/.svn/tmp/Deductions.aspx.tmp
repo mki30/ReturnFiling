@@ -1,0 +1,43 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Deductions.aspx.cs" Inherits="Deductions_Deductions" %>
+
+<%@ Register Src="~/Controls/IncomeSourceMenu.ascx" TagPrefix="uc1" TagName="IncomeSourceMenu" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<<<<<<< .mine
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <uc1:IncomeSourceMenu runat="server" ID="IncomeSourceMenu" />
+<div class="container">
+    
+    <h2>Deductions Under Section 80</h2>
+=======
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div class="container" id="divMain" runat="server">
+        <uc1:IncomeSourceMenu runat="server" ID="IncomeSourceMenu" />
+        <h2>Deductions Under Section 80</h2>
+>>>>>>> .r259
+        <div class="highlight">
+            <h3>Investments under Section 80C</h3>
+            <br />
+            <span class="quiet">Section 80C: Contributions to LIC, NSC, PF, PPF, Mutual Funds etc. You can claim a deduction of upto Rs 1 Lakh under this section.</span>
+            <p>Investments under Section 80C</p>
+            <p class="p">In your Form-16, find this information under Part-B - Details of Salary Paid (Heading 6) </p>
+            <asp:TextBox ID="txt_80C" runat="server" CssClass="col-xs-4"></asp:TextBox>
+            <br />
+            <br />
+        </div>
+        <div class="highlight">
+            <h3>Section 80TTA: Deduction for Interest earned on Savings Bank Account</h3>
+            <br />
+            <p class="p">Interest earned on Savings Bank Account </p>
+            <asp:TextBox ID="txt_80TTA" runat="server" CssClass="col-xs-4"></asp:TextBox>
+            <br />
+            <br />
+            <p>
+                <asp:Button ID="btnSave" runat="server" Text="Save" class="btn btn-info btn-sm" OnClick="btnSave_Click" />
+            </p>
+        </div>
+    </div>
+</asp:Content>
+
+

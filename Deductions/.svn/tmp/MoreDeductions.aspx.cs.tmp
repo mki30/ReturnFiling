@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using ReturnFilingModel;
+
+public partial class Deductions_MoreDeductions : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        
+    }
+    protected void btnSave_Click(object sender, EventArgs e)
+    {
+        GetAllTextBoxes(divMain);
+    }
+
+    public void GetAllTextBoxes(Control parent)
+    {
+        Global.CandidateID = 1;
+        foreach (Control ctl in parent.Controls)
+        {
+            if (ctl.GetType().ToString().Equals("System.Web.UI.WebControls.TextBox"))
+            {
+                TextBox txt = ((TextBox)ctl);
+                string Amount = txt.Text;
+                int IsSenior = -1;
+                string SectionName = txt.ID.Replace("txt_", "");
+
+                switch (txt.ID)
+                {
+                    case "txt_80D_1": IsSenior = dd_80D_1.SelectedIndex; break;
+                    case "txt_80D_2": IsSenior = dd_80D_2.SelectedIndex; break;
+                    case "txt_80DDB": IsSenior = Cmn.ToInt(dd_80DDB_1.SelectedValue); break;
+                    case "txt_80GG": IsSenior = Cmn.ToInt(dd_80GG.SelectedValue); break;
+                }
+
+                Deduction d = Deduction.GetUnique(Global.CandidateID, SectionName);
+                if (d == null)
+                {
+                    d = new Deduction();
+                    d.ID = 0;
+                }
+                d.CandidateID = Global.CandidateID;
+                d.SectionName = SectionName.ToUpper();
+                d.Amount = Cmn.ToDbl(Amount);
+                d.IsSenior = IsSenior;
+                d.Save();
+            }
+        }
+    }
+}

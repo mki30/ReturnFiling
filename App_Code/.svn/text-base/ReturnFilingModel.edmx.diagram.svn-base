@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cedab441c240460892ccb721560cb854" Name="Diagram1" ZoomLevel="97">
+        <EntityTypeShape EntityType="ReturnFilingModel.AdvanceTax" Width="1.5" PointX="4.1044912394622761" PointY="22.903791423376553" />
+        <EntityTypeShape EntityType="ReturnFilingModel.Asset" Width="1.5" PointX="3.3574890770751464" PointY="27.737452162307431" />
+        <EntityTypeShape EntityType="ReturnFilingModel.CapitalGain" Width="1.5" PointX="5.343120286866613" PointY="17.798801102581805" />
+        <EntityTypeShape EntityType="ReturnFilingModel.Deduction" Width="1.5" PointX="11.65976241215121" PointY="8.1287324019375866" />
+        <EntityTypeShape EntityType="ReturnFilingModel.Donation" Width="1.5" PointX="11.117825690246107" PointY="3.1519893869534084" />
+        <EntityTypeShape EntityType="ReturnFilingModel.HouseProperty" Width="1.5" PointX="0.39504287410296635" PointY="5.97554908971095" />
+        <EntityTypeShape EntityType="ReturnFilingModel.OtherIncome" Width="1.5" PointX="10.585521306183898" PointY="18.230146610285225" />
+        <EntityTypeShape EntityType="ReturnFilingModel.Refund" Width="1.5" PointX="9.4713037859049187" PointY="19.369314098437" />
+        <EntityTypeShape EntityType="ReturnFilingModel.Salary" Width="1.5" PointX="2.1867877776673006" PointY="13.758584058731135" />
+        <EntityTypeShape EntityType="ReturnFilingModel.TDSEntry" Width="1.5" PointX="11.849426429648617" PointY="14.529754138798339" />
+        <EntityTypeShape EntityType="ReturnFilingModel.UserManagement" Width="1.5" PointX="4.41857827846826" PointY="17.911863737698582" />
+        <EntityTypeShape EntityType="ReturnFilingModel.AdditionalInfo" Width="1.5" PointX="1.6143301155484888" PointY="2.7843091053815137" />
+        <EntityTypeShape EntityType="ReturnFilingModel.PersonalInfo" Width="1.5" PointX="8.51961825253424" PointY="12.390712743806985" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

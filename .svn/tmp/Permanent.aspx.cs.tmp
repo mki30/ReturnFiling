@@ -1,0 +1,72 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using ReturnFilingModel;
+
+public partial class Permanent : BasePage
+{
+    protected new void Page_Load(object sender, EventArgs e)
+    {
+		base.Page_Load(sender, e);
+        //if(!IsPostBack)
+        //  ShowDetails();
+    }
+	
+	void ShowDetails()
+	{
+		PersonalInfo ci = PersonalInfo.GetByID(Global.CandidateID);
+		if (ci != null)
+		{
+		 	txtFirstName.Text = ci.FirstName;
+			txtMiddleName.Text= ci.MiddleName;
+			txtLastName.Text= ci.LastName;
+			ddGender.SelectedValue = ci.Gender.ToString(); 
+            txtDob.Text = Cmn.ToDate(ci.DOB).ToString("dd-MMM-yyyy");
+			txtPan.Text = ci.PANNumber;
+			txtFathersName.Text = ci.FatherName;
+            txtEmail.Text = ci.EmailID;
+		}
+	}
+	protected void btnSave_Click1(object sender, EventArgs e)
+	{
+        PersonalInfo ci = null;
+        if (Global.CandidateID != 0)
+            ci = PersonalInfo.GetByID(Global.CandidateID);
+        else
+            ci = PersonalInfo.GetUnique(Global.CurrentAssessmentYear, txtPan.Text);
+
+        try
+        {
+            if (ci == null)
+            {
+                ci = new PersonalInfo();
+                ci.ID = 0;
+                ci.AssessmentYear = Global.CurrentAssessmentYear;
+            }
+
+            ci.FirstName = txtFirstName.Text;
+            ci.MiddleName = txtMiddleName.Text;
+            ci.LastName = txtLastName.Text;
+            ci.Gender = Cmn.ToInt(ddGender.SelectedValue);
+            ci.DOB = Cmn.ToDate(txtDob.Text);
+            ci.PANNumber = txtPan.Text;
+            ci.FatherName = txtFathersName.Text;
+            ci.EmailID = txtEmail.Text;
+            ci.Save();
+            Global.CandidateID = (int)ci.ID;
+            ltStatus.Text = Global.SuccesMessage("Saved Succssfully") + "&nbsp;&nbsp;<a href='/Address' class='span'>Go to next step</a>";
+            //Response.Redirect("/Address");
+
+        }
+        catch (Exception ex)
+        {
+            ltStatus.Text = Global.ErrorMessage("Error, not saved." + ex.Message);
+
+            if(ex.Message=="The property 'PANNumber' is part of the object's key information and cannot be modified.")
+                ltStatus.Text = Global.ErrorMessage("Pan no can't be modified");
+        }
+	}
+}

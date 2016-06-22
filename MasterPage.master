@@ -1,0 +1,441 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" ClientIDMode="Static" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <%--<title><%: Page.Title %></title>--%>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <link rel="shortcut icon" type="image/png" href="/Images/icon.png">
+    <link href="/BootStrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/BootStrap/css/datetimepicker.css" rel="stylesheet" />
+    <%--<link href="navbar-fixed-top.css" rel="stylesheet">--%>
+    <link href="/BootStrap/css/docs.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <%--<link href="css/fonts.css" rel="stylesheet" />--%>
+    <link href="/css/styles_new.css" rel="stylesheet" />
+    <link href="/css/responsive.css" rel="stylesheet" />
+    <style type="text/css">
+        .p1 { font-size: 1.3em; color: rgb(87, 173, 214); text-align: justify; } /*rgb(197, 132, 132);*/
+        body { font-size: 12px !important; }
+        .error { color: red; }
+        .success { color: green; }
+        .currentrecord { background-color: #FAF7E5; }
+        .currentpage { background-color: orange!important; color: white!important; padding: 4px; }
+        .topSel { background-color: black; }
+        .redstar { color: red; }
+        .span { font-weight: bold; cursor: pointer; }
+        .p { font-style: italic; }
+         p { margin: 10px 0px 10px 0px !important; }
+        .footer-links ul li * { font-size: 1em !important; }
+        span.sellers-link1 { display: inline-block; padding: 2px 8px; background-color: #CF4236; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
+            span.sellers-link1 a, span.sellers-link a { padding: 4px; }
+        .pgtitle { background-color: rgb(66, 132, 170); padding: 0px 1px 0px 10px; margin-top: 7px; color: white; font-size: 1.9em; font-family: 'myriadpro-semibold', sans-serif; }
+        .para { font-size: 16px; text-align: justify; }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="inside pricing" class="inside">
+    <form id="form1" runat="server">
+    <div class="container">
+        <!-- Vertical Slide Menu Panel For Tablet/Phone Starts Here -->
+        <%--<div class="slide-menu hidden-desktop">
+            <div class="menu-list">
+                <a href="#" class="close-slide"></a>
+                <a href="/" title="Home" class="nav-link">Features<span class="arrow hidden-phone"></span></a>
+                <a href="/services" title="Services" class="nav-link">Services<span class="arrow hidden-phone"></span></a>
+                <a href="/pricing" title="Pricing" class="nav-link">Pricing<span class="arrow hidden-phone"></span></a>
+                <a href="/contact" title="Contact" class="nav-link">Contact</a>
+                <a href="/signin" title="Company" class="nav-link">Company</a>
+            </div>
+        </div>--%>
+        <!-- Vertical Slide Menu Panel For Tablet/Phone Ends Here -->
+
+        <!-- Header Panel Starts Here -->
+        <div class="row-fluid header-panel masthead-bg">
+            <div class="span12 login">
+                <div class="pull-left span5" style="text-align: left; text-indent: 10px;" runat="server" id="divAssessmentYearnfo"></div>
+                <div class="span6">
+                    <asp:LoginView ID="LoginView1" runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><span class="sellers-link"><a id="A1" class="login-link sellers btn btn-xs" runat="server" href="~/Account/Register">Register</a></span>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+                                <li><span class="sellers-link1"><a id="A2" class="login-link sellers  btn btn-xs" runat="server" href="~/Account/Login">Log in</a></span></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><span class="sellers-link"><a id="A3" runat="server" href="~/Account/Manage" class="login-link sellers btn btn-xs" title="Manage your account">Hello, <%:Context.User.Identity.GetUserName()  %>!</a></span>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+                                <li><span class="sellers-link1">
+                                    <asp:LoginStatus ID="LoginStatus1" class="login-link sellers  btn btn-xs" runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                </span></li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span12 masthead sellers">
+
+                    <span class="span3 logo-panel"><a href="https://www.return-filing.in" title="return-filing.in" class="logo"></a>
+                        <h3 style="margin-top: 20px; color: white"><a href="/" style="text-decoration: none; color: white;">Return-Filing.in</a></h3>
+                    </span>
+
+                    <ul class="span9 navigation-panel pull-right">
+                        <li><a href="/" title="Home" class="nav-link hidden-phone hidden-tablet features">Home<span class="arrow hidden-phone"></span></a></li>
+                        <li><a href="/services" title="Services" class="nav-link hidden-phone hidden-tablet services" id="services">Services<span class="arrow hidden-phone"></span></a></li>
+                        <li><a href="/pricing" title="Pricing" class="nav-link hidden-phone hidden-tablet" id="pricing">Pricing<span class="arrow hidden-phone"></span></a></li>
+                        <li><a href="/contact" title="Sign In" class="nav-link hidden-phone hidden-tablet faq">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 80px;"></div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <div class="span12 back-top">
+            <span class="back-top-arrow">
+                <a href="javascript:window.history.back();" class="rightarrow">&nbsp;</a>&nbsp;&nbsp;&nbsp;<a id="toplink" href="#top" class="toparrow">&nbsp;</a>
+            </span>
+            <script>
+                $('#toplink').click(function()
+                {
+                    $("html, body").animate({ scrollTop: 0 }, 600);
+                    return false;
+                });
+            </script>
+        </div>
+        <div class="row-fluid footer-panel footer-bg">
+            <div class="span12 footer-links">
+                <div class="container">
+                    <ul class="bs-docs-footer-links muted">
+                        <li><a href="/about">About</a></li>
+                        <li>&middot;</li>
+                        <li><a href="/pricing">Pricing</a></li>
+                        <li>&middot;</li>
+                        <li><a href="/whyus">Why Us</a></li>
+                        <li>&middot;</li>
+                        <li><a href="/disclaimer">Disclaimer</a></li>
+                        <li>&middot;</li>
+                        <li><a href="/privacypolicy">Privacy Policy</a></li>
+                        <li>&middot;</li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li>&middot;</li>
+                        <li>v1.1</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/BootStrap/js/bootstrap.min.js"></script>
+<script src="/BootStrap/js/datetimepicker.js"></script>
+
+<script>
+    $(window).scroll(function()
+    {
+        if ($(this).scrollTop() > 30)
+        {
+            $(".header-panel").animate({ top: -32, opacity: 1 }, 0);
+            $(".submenupanel").animate({ top: 63, opacity: 1 }, 0);
+            $(".features-tabs").animate({ top: 62, opacity: 1 }, 0);
+
+            /*}else if ($(this).scrollTop() > $('#features').position().top){
+                $(".header-panel").animate({top: -95, opacity: 1},0);
+                $(".submenupanel").animate({top: 95, opacity: 1},0);
+                
+                    if( $('.features-tabs').length ){$(".features-tabs").animate({top: 0, opacity: 1},0);}*/
+        }
+        else
+        {
+            $(".header-panel").animate({ top: 0, opacity: 1 }, 0);
+            $(".submenupanel").animate({ top: 95, opacity: 1 }, 0);
+            $(".features-tabs").animate({ top: 95, opacity: 1 }, 0);
+            //if( $('.features-tabs').length ){$(".features-tabs").animate({top: 95, opacity: 1},0);}
+        }
+    });
+</script>
+<script type="text/javascript">
+    //$(document).ready(function ()
+    //{
+    //    $('body').load(function ()
+    //    {
+    //        $.reject(); // Default Settings  
+    //        return false;
+    //    });
+    //});
+</script>
+<script type="text/javascript">
+    var owl, owl2;
+    $(document).ready(function()
+    {
+        var loc = window.location.pathname;
+        /*$('.navigation-panel').find('a').each(function() {
+          $(this).toggleClass('active', $(this).attr('href') == loc);
+          
+          var navId=$(this).attr("class").replace("nav-link hidden-phone hidden-tablet ","");
+          $(".submenu-inner").hide();
+          $("#"+navId).show();
+        });*/
+
+        /*Bhargav - Services sub-menu Start*/
+        if ($("body").hasClass("ourservices"))
+        {
+            /*check if url have # tag, url redirecting from features page*/
+            var url = window.location.href;
+            if (url.search("#") > 0)
+            {
+                //if(document.URL.match(/#/)){
+                $(".submenupanel_serv, .submenupanel_featrs").hide();
+                $('.navigation-panel').find('a.active').toggleClass("active");
+                $('.navigation-panel').find(".features").addClass("active");
+            }
+            else
+            {
+                $(".submenupanel_other").hide();
+                $(".submenupanel_serv, .submenupanel_featrs").show();
+                $(".submenupanel div").show();
+                $('.submenu').find('a').each(function()
+                {
+                    //if($(this).attr('href').split('#')[1] == document.URL.split('#')[1]) {
+                    if (document.URL.indexOf($(this).attr('href')) !== -1)
+                    {
+                        $(this).addClass('active');
+                        var navPanel = $(this).closest(".submenu-inner").attr("id");
+                        $('.navigation-panel').find('a.active').toggleClass("active");
+                        $('.navigation-panel').find("." + navPanel).addClass("active");
+                        $(".submenupanel").find("div").not("#" + navPanel).hide();
+                    }
+                });
+            }
+        }
+        else
+        {
+            $(".submenupanel_serv, .submenupanel_featrs").hide();
+            /*pre written code Start*/
+            var subMenuId = $("body").attr("class").replace("inside ", "");
+            $(".sub-nav-links").removeClass("active");
+            $("#" + subMenuId).addClass("active");
+            var nav_panel_id = $("#" + subMenuId).closest(".submenu-inner").attr("id");
+            $(".nav-link." + nav_panel_id).addClass('active');
+            $(".submenupanel div").hide();
+            $("#" + nav_panel_id).show();
+
+            $('.nav-link').each(function()
+            {
+                if ($(this).attr('href') == loc)
+                    $(this).addClass('active');
+            });
+            if ($('.submenupanel').hasClass('submenupanel_serv') || $('.submenupanel').hasClass('submenupanel_featrs'))
+            {
+                $('.submenu').find('a').each(function()
+                {
+                    if ($(this).attr('href') == loc)
+                    {
+                        $(this).addClass('active');
+                        var navPanel = $(this).closest(".submenu-inner").attr("id");
+                        $('.navigation-panel').find('a.active').toggleClass("active");
+                        $('.navigation-panel').find("." + navPanel).addClass("active");
+                        $(".submenupanel").find("div").not("#" + navPanel).hide();
+                    }
+                    else
+                    {
+                        $('.navigation-panel').find('a.active').toggleClass("active");
+                        var navPanel = $(this).closest(".submenu-inner").attr("id");
+                        //alert(navPanel);
+                        $('.navigation-panel').find("." + navPanel).addClass("active");
+                    }
+                });
+            } else
+            {
+                $('.submenu').find('a').each(function()
+                {
+                    if ($(this).attr('href') == loc)
+                    {
+                        $(this).addClass('active');
+                        var navPanel = $(this).closest(".submenu-inner").attr("id");
+                        $('.navigation-panel').find('a.active').toggleClass("active");
+                        $('.navigation-panel').find("." + navPanel).addClass("active");
+                        $(".submenupanel").find("div").not("#" + navPanel).hide();
+                    }
+                });
+            }
+            /*pre written code End*/
+
+            /*if($("body").hasClass("ourservices")){
+                $(".submenupanel_serv, .submenupanel_featrs").hide();
+            }
+            else{
+                
+            }*/
+        }
+        /*Bhargav - Services sub-menu End*/
+
+        /*if($('.nav-link').hasClass('active')) {
+    
+            var navId=$('.nav-link.active').attr('class').replace("nav-link hidden-phone hidden-tablet ","");
+            alert(navId);
+            if(navId.indexOf(" ")!=-1)
+                navId = navId.substring(0,navId.indexOf(" "));
+    
+            $(".submenu-inner").each(function(){$(this).hide();});
+            alert($("#"+navId).size()+':navID:'+navId);
+            $("#"+navId).show();
+            alert($("#"+navId).size()+':navID:'+navId);
+        }*/
+        $('.nav-link').click(function()
+        {
+            $(this).toggleClass('active', $(this).attr('href') == loc);
+            var navId = $(this).attr("class").replace("nav-link hidden-phone hidden-tablet ", "");
+            if (navId.indexOf(" ") != -1)
+                navId = navId.substring(0, navId.indexOf(" "));
+
+            $(".submenu-inner").each(function() { $(this).hide(); });
+            $("#" + navId).show();
+        });
+
+        $(".menu-box .menu").click(function()
+        {
+            $(".slide-menu").animate({ right: '0' });
+        });
+
+        $(".close-slide").click(function()
+        {
+            $(".slide-menu").animate({ right: '-220px' });
+        });
+
+        if (!!$("#blue-tab-menu").offset())
+        {
+            owl2 = $("#blue-tab-menu");
+            owl2.owlCarousel({
+                rewindNav: true,
+                items: 10, //10 items above 1000px browser width
+                itemsDesktop: [1000, 8], //5 items between 1000px and 901px
+                itemsDesktopSmall: [900, 5], // betweem 900px and 601px
+                itemsTablet: [600, 3], //2 items between 600 and 0
+                itemsMobile: [400, 2] // itemsMobile disabled - inherit from itemsTablet option
+            });
+        }
+
+        if ($(window).width() > 1000)
+        {
+            $("#company").find(".owl-wrapper div").first().css("margin-left", "265px");
+            $("#services").find(".owl-wrapper div").first().css("margin-left", "93px");
+        }
+        if (!!$("#features-icon-panel").offset())
+        {
+            owl = $("#features-icon-panel");
+            owl.owlCarousel({
+                itemsCustom: [
+                  [0, 2],
+                  [450, 3],
+                  [600, 5],
+                  [700, 5],
+                  [1000, 7]
+                ],
+                navigation: true
+            });
+        }
+    });
+</script>
+<script>
+    $(window).scroll(function()
+    {
+        if ($(this).scrollTop() > 50)
+        {
+            $(".header-panel").animate({ top: -32, opacity: 1 }, 0);
+            $(".submenupanel").animate({ top: 65, opacity: 1 }, 0);
+            $(".features-tabs").animate({ top: 62, opacity: 1 }, 0);
+        }
+        else
+        {
+            $(".header-panel").animate({ top: 0, opacity: 1 }, 0);
+            $(".submenupanel").animate({ top: 95, opacity: 1 }, 0);
+            $(".features-tabs").animate({ top: 95, opacity: 1 }, 0);
+            //if( $('.features-tabs').length ){$(".features-tabs").animate({top: 95, opacity: 1},0);}
+        }
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+        var loc = window.location.pathname;
+
+        $('.nav-link').each(function()
+        {
+            if ($(this).attr('href') == loc)
+                $(this).addClass('active');
+        });
+        $('.nav-link').click(function()
+        {
+            $(this).toggleClass('active', $(this).attr('href') == loc);
+            var navId = $(this).attr("class").replace("nav-link hidden-phone hidden-tablet ", "");
+            if (navId.indexOf(" ") != -1)
+                navId = navId.substring(0, navId.indexOf(" "));
+
+            $(".submenu-inner").each(function() { $(this).hide(); });
+            $("#" + navId).show();
+        });
+
+        $(".menu-box .menu").click(function()
+        {
+            $(".slide-menu").animate({ right: '0' });
+        });
+
+        $(".close-slide").click(function()
+        {
+            $(".slide-menu").animate({ right: '-220px' });
+        });
+    });
+</script>
+<!-- Footer Includes Ends Here -->
+<!-- Main Container Ends Here  -->
+
+<script src="/js/CommonUI.js"></script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $(".popular-scheme, .privilege-scheme").hide();
+        $("a.popular").click(function()
+        {
+            $(".popular-scheme").slideToggle('slow');
+            return false;
+        });
+
+        $("a.privilege").click(function()
+        {
+            $(".privilege-scheme").slideToggle('slow');
+            return false;
+        });
+
+        $("#POP-Desktop, #POP-Mobile").click(function()
+        {
+            $("#schemeCode").val("POP");
+            $("#signUpForm").submit();
+        });
+
+        $("#PRI-Desktop, #PRI-Mobile").click(function()
+        {
+            $("#schemeCode").val("PRI");
+            $("#signUpForm").submit();
+        });
+    });
+</script>
+
+</html>
+
+

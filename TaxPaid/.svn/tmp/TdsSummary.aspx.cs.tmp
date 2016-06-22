@@ -1,0 +1,94 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using ReturnFilingModel;
+using System.Text;
+
+public partial class TaxPaid_TdsSummary : BasePage
+{   
+    protected new void Page_Load(object sender, EventArgs e)
+    {
+        base.Page_Load(sender, e);
+
+        if (!IsPostBack)
+            ShowDetails();
+    }
+
+    void ShowDetails()
+    {
+<<<<<<< .mine
+        TDSEntry TDSE = TDSEntry.GetByID(1);
+        if (TDSE != null)
+        {
+            txtTanOfDeductor.Text = TDSE.DeductorTAN;
+            txtNameOfDeductor.Text = TDSE.DeductorName;
+            txtTotalTaxDeducted.Text = TDSE.ToatalTaxDeducted.ToString();
+            txtTaxDeductedClaimed.Text = TDSE.ToatalDeductedClaimed.ToString();
+            ddFinancialYear.SelectedValue = TDSE.FinancialYear.ToString();
+        }
+=======
+		//TDSEntry TDSE = TDSEntry.GetByID(1);
+		//if (TDSE != null)
+		//{
+		//	txtTanOfDeductor.Text = TDSE.DeductorTAN;
+		//	txtTotalTaxDeducted.Text = TDSE.ToatalTaxDeducted.ToString();
+		//	txtTaxDeductedClaimed.Text = TDSE.ToatalDeductedClaimed.ToString();
+		//	ddFinancialYear.SelectedValue = TDSE.FinancialYear.ToString();
+		//}
+>>>>>>> .r274
+
+        List<TDSEntry> list = TDSEntry.GetByCandidateIDandFinancialYear(Global.CandidateID,2013);
+        StringBuilder sb=new StringBuilder();
+        
+        ltTDSSummary.Text = sb.ToString();
+    }
+    protected void btnSave_Click(object sender, EventArgs e)
+    {
+		//try
+		//{
+		//	TDSEntry TDSE = TDSEntry.GetByID(1);
+
+<<<<<<< .mine
+            if (TDSE == null)
+            {
+                TDSE = new TDSEntry();
+                TDSE.ID = 0;
+                TDSE.CandidateID = Global.CandidateID;
+            }
+            
+            TDSE.DeductorTAN = txtTanOfDeductor.Text;
+            TDSE.DeductorName = txtNameOfDeductor.Text;
+            TDSE.FinancialYear = Cmn.ToInt(ddFinancialYear.SelectedValue);
+            TDSE.ToatalDeductedClaimed = Cmn.ToDbl(txtTaxDeductedClaimed.Text);
+            TDSE.ToatalTaxDeducted = Cmn.ToDbl(txtTotalTaxDeducted.Text);
+            TDSE.Save();
+            ltStatus.Text = Global.SuccesMessage("Saved Succssfully");
+        }
+        catch (Exception ex)
+        {
+            ltStatus.Text = Global.ErrorMessage("Error, not saved." + ex.Message);
+        }
+=======
+		//	if (TDSE == null)
+		//	{
+		//		TDSE = new TDSEntry();
+		//		TDSE.ID = 0;
+		//		TDSE.CandidateID = Global.CandidateID;
+		//	}
+		//	TDSE.DeductorTAN = txtTanOfDeductor.Text;
+		//	TDSE.FinancialYear = Cmn.ToInt(ddFinancialYear.SelectedValue);
+		//	TDSE.ToatalDeductedClaimed = Cmn.ToDbl(txtTaxDeductedClaimed.Text);
+		//	TDSE.ToatalTaxDeducted = Cmn.ToDbl(txtTotalTaxDeducted.Text);
+		//	TDSE.Save();
+		//	ltStatus.Text = Global.SuccesMessage("Saved Succssfully");
+		//}
+		//catch (Exception ex)
+		//{
+		//	ltStatus.Text = Global.ErrorMessage("Error, not saved." + ex.Message);
+		//}
+>>>>>>> .r274
+    }
+}

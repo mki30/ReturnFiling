@@ -1,0 +1,20 @@
+03/07/2014 16:16:36
+PersonalInfo()
+An error occurred while updating the entries. See the inner exception for details.
+   at System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   at System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   at System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   at System.Data.Objects.ObjectContext.SaveChanges()
+   at ReturnFilingModel.PersonalInfo.Save() in c:\Developement\ReturnFiling\App_Code\PersonalInfo.cs:line 80
+03/07/2014 16:23:45
+PersonalInfo()
+Nullable object must have a value.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at System.Nullable`1.get_Value()
+   at ReturnFilingModel.PersonalInfo.Save() in c:\Developement\ReturnFiling\App_Code\PersonalInfo.cs:line 82
+03/07/2014 16:29:47
+PersonalInfo()
+Nullable object must have a value.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at System.Nullable`1.get_Value()
+   at ReturnFilingModel.PersonalInfo.Save() in c:\Developement\ReturnFiling\App_Code\PersonalInfo.cs:line 82

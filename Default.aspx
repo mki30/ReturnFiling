@@ -1,0 +1,81 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Default2" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <br />
+    <br />
+    <br />
+    <div class="container" id="divMain1">
+        <asp:Panel ID="pnlSubmit" runat="server">
+            <div class="row">
+                <div class="col-md-12 highlight" style="text-align: center;">
+                    <h1>Return Filing 2013-14</h1>
+                    <p style="font-size: 14px;">Last date for return filing for financial year 2013-2014 is 31st July 2014.</p>
+                    <p style="font-size: 14px;">Upload your form 16 for the easiest return filing process.</p>
+                    <div class="row">
+                        <%--<div class="col-md-6">
+                    <a href="/permanent" class="btn btn-success btn-lg ">Start Your Tax Return Now</a>
+                </div>--%>
+                        <br />
+                        <div class="col-md-12">
+                            <a href="/uploadform16" class="btn btn-warning btn-lg">Upload Your Form 16 Now</a>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </asp:Panel>
+
+        <asp:Panel ID="pnlInfo" runat="server" Visible="false">
+
+            <div class="row" >
+                <div class="col-lg-12" style="padding-left:0px !important;padding-right:0px !important;  ">
+                    <hr style="height: 1px; background-color: green;" />
+                    
+                    <h4 style="background-color: rgb(245, 245, 231); padding: 4px;">Application Details For :
+                        <asp:Label ID="lblEmail" runat="server" Style="color: rgb(66, 119, 197)"></asp:Label></h4>
+                    <br />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 alert alert-warning" style="min-height: 141px;">
+                    <h3 style="margin-top: 0px !important;">Status</h3>
+                        <strong>
+                            <div id="divStatus" runat="server"></div>
+                        </strong>
+                </div>
+                <div class="col-lg-1">&nbsp;</div>
+                <div class="col-lg-4 alert alert-info">
+                    <h3 style="margin-top: 0px !important;">Edit Details</h3>
+                    <a href="/uploadform16" class="btn btn-block btn-warning">Upload New Form16 PDF</a>
+                    <a href="/personalinfo" class="btn btn-block btn-primary">Update Personal Information</a>
+                </div>
+
+                <div class="col-lg-1">&nbsp;</div>
+                <div class="col-lg-3 alert alert-info" style="min-height: 141px;">
+                    <h3 style="margin-top: 0px !important;">Personal Info</h3>
+                    <b>Name : </b>
+                    <asp:Label ID="lblName" runat="server"></asp:Label>
+                    <br />
+                    <b>Father Name : </b>
+                    <asp:Label ID="lblFatherName" runat="server"></asp:Label>
+                    <br />
+                    <b>Date of Birth : </b>
+                    <asp:Label ID="lblDOB" runat="server"></asp:Label>
+                    <br />
+                    <b>PAN : </b>
+                    <asp:Label ID="lblPAN" runat="server"></asp:Label>
+                    <br />
+                </div>
+            </div>
+        </asp:Panel>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            $("#divMain1").css('min-height', $(window).height() - 102 - ($(".header-panel").height() + $(".back-top").height() + $(".footer-panel").height()));
+        });
+    </script>
+</asp:Content>

@@ -1,0 +1,91 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Data;
+using System.Web;
+using ReturnFilingModel;
+
+namespace ReturnFilingModel
+{
+    public partial class Salary
+    {
+        public string Message = "";
+		public Salary()
+        {
+        }
+
+		public static List<Salary> GetByCandidateID(int CandidateID)
+		{
+			using (ReturnFilingEntities context = new ReturnFilingEntities(Global.ConnectionStringEntity))
+			{
+				return context.Salaries.Where(m => m.CandidateID == CandidateID).ToList();
+			}
+		}
+
+        public static Salary GetUnique(int CandidateID, string EmployerTAN)
+        {
+            using (ReturnFilingEntities context = new ReturnFilingEntities(Global.ConnectionStringEntity))
+            {
+				return context.Salaries.FirstOrDefault(m => m.CandidateID == CandidateID && m.EmployerTAN == EmployerTAN);
+            }
+        }
+
+        public static Salary GetByID(int ID)
+        {
+			using (ReturnFilingEntities context = new ReturnFilingEntities(Global.ConnectionStringEntity))
+            {
+				return context.Salaries.FirstOrDefault(m => m.ID == ID);
+            }
+        }
+		        
+        public int Save()
+        {
+            try
+            {
+				using (ReturnFilingEntities context = new ReturnFilingEntities(Global.ConnectionStringEntity))
+                {
+					Salary tempObj = null;
+					if (ID != 0)
+						tempObj = context.Salaries.FirstOrDefault(m => m.ID == ID && m.CandidateID==CandidateID);
+
+					Boolean IsNew = tempObj == null;
+
+                    if (IsNew)
+                    {
+                        ID = 1;
+                        try
+                        {
+                            ID = context.Salaries.Max(m => m.ID) + 1;
+                         }
+                        catch (Exception ex)
+                        {
+                            ID = 1;
+                        }
+                        IsNew = true;
+                    }
+                    else
+						ID = tempObj.ID;
+                    LUDate = DateTime.Now;
+                    if (IsNew)
+                        context.AddToSalaries(this);
+                    else
+                    {
+						if (tempObj != null)
+							context.CreateObjectSet<Salary>().Detach(tempObj);
+						context.CreateObjectSet<Salary>().Attach(this);
+                        context.ObjectStateManager.ChangeObjectState(this, EntityState.Modified);
+                    }
+                    context.SaveChanges();
+                }
+                return ID;
+            }
+            catch (Exception ex)
+            {
+				Cmn.LogError(ex, "Salary()");
+                Message += ex.Message;
+                return 0;
+            }
+        }
+    }
+}
+

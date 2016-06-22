@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/propertymap_propertymap/!svn/ver/320/ReturnFiling/App_Code
+END
+Donation.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/propertymap_propertymap/!svn/ver/312/ReturnFiling/App_Code/Donation.cs
+END
+UserManagement.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/propertymap_propertymap/!svn/ver/276/ReturnFiling/App_Code/UserManagement.cs
+END
+TDSEntry.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/propertymap_propertymap/!svn/ver/316/ReturnFiling/App_Code/TDSEntry.cs
+END
+DatabaseCE.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/propertymap_propertymap/!svn/ver/234/ReturnFiling/App_Code/DatabaseCE.cs
+END
+OtherIncome.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/propertymap_propertymap/!svn/ver/312/ReturnFiling/App_Code/OtherIncome.cs
+END
+CapitalGain.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/propertymap_propertymap/!svn/ver/312/ReturnFiling/App_Code/CapitalGain.cs
+END
+Cmn.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/propertymap_propertymap/!svn/ver/308/ReturnFiling/App_Code/Cmn.cs
+END
+AdvanceTax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/propertymap_propertymap/!svn/ver/316/ReturnFiling/App_Code/AdvanceTax.cs
+END
+Deduction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/propertymap_propertymap/!svn/ver/312/ReturnFiling/App_Code/Deduction.cs
+END
+Asset.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/propertymap_propertymap/!svn/ver/312/ReturnFiling/App_Code/Asset.cs
+END
+ReturnFilingModel.edmx
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/propertymap_propertymap/!svn/ver/320/ReturnFiling/App_Code/ReturnFilingModel.edmx
+END
+DBCheck.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/propertymap_propertymap/!svn/ver/320/ReturnFiling/App_Code/DBCheck.cs
+END
+ReturnFilingModel.edmx.diagram
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/propertymap_propertymap/!svn/ver/318/ReturnFiling/App_Code/ReturnFilingModel.edmx.diagram
+END
+ReturnFilingModel.Designer
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/propertymap_propertymap/!svn/ver/280/ReturnFiling/App_Code/ReturnFilingModel.Designer
+END
+AdditionalInfo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/propertymap_propertymap/!svn/ver/312/ReturnFiling/App_Code/AdditionalInfo.cs
+END
+email.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/propertymap_propertymap/!svn/ver/309/ReturnFiling/App_Code/email.cs
+END
+HouseProperty.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/propertymap_propertymap/!svn/ver/312/ReturnFiling/App_Code/HouseProperty.cs
+END
+ReturnFilingModel.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/propertymap_propertymap/!svn/ver/320/ReturnFiling/App_Code/ReturnFilingModel.Designer.cs
+END
+Salary.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/propertymap_propertymap/!svn/ver/312/ReturnFiling/App_Code/Salary.cs
+END
+IdentityModels.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/propertymap_propertymap/!svn/ver/314/ReturnFiling/App_Code/IdentityModels.cs
+END
+PersonalInfo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/propertymap_propertymap/!svn/ver/320/ReturnFiling/App_Code/PersonalInfo.cs
+END
+BundleConfig.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/propertymap_propertymap/!svn/ver/274/ReturnFiling/App_Code/BundleConfig.cs
+END
+Global.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/propertymap_propertymap/!svn/ver/320/ReturnFiling/App_Code/Global.cs
+END
+Startup.Auth.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/propertymap_propertymap/!svn/ver/315/ReturnFiling/App_Code/Startup.Auth.cs
+END
+Startup.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/propertymap_propertymap/!svn/ver/274/ReturnFiling/App_Code/Startup.cs
+END
+BasePage.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/propertymap_propertymap/!svn/ver/303/ReturnFiling/App_Code/BasePage.cs
+END
+Form16.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/propertymap_propertymap/!svn/ver/249/ReturnFiling/App_Code/Form16.cs
+END
